@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-primary-900 text-white font-mono;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+
+  ::selection {
+    @apply bg-primary-700 text-white;
+  }
+}
+
+@layer utilities {
+  .text-shadow-subtle {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+
+  .text-shadow-strong {
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  }
+
+  .bg-gradient-elegant {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(10, 10, 10, 0.1));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  .bg-blur {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .glass-panel {
+    @apply bg-primary-800/60 backdrop-blur-md border border-primary-700/30;
+  }
+
+  .glass-card {
+    @apply bg-primary-800/80 backdrop-blur-lg border border-primary-800/50 hover:border-primary-600/50 transition-all duration-300;
+  }
+
+  .elegant-border {
+    @apply border border-primary-700/30 shadow-subtle;
+  }
+
+  .elegant-border-hover:hover {
+    @apply border-primary-600/50 shadow-glow;
+  }
+
+  .transition-transform-opacity {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+}
